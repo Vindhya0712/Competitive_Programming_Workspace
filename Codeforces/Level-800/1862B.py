@@ -1,12 +1,14 @@
-import random
-
 t = int(input())
 for i in range(t):
     n = int(input())
     array = list(map(int, input().split()))
-    answer = []
-    while len(answer) >= n and len(answer) <= 2*n:
-        answer.append(array[0])
-        for k in 
+    answer = [array[0]]
+    if len(answer) <= 2*n:
+        for k in range(1, n):
+            if array[k-1] > array[k]:
+                answer.append(array[k])
+                answer.append(array[k])
+            else:
+                answer.append(array[k])
     print(len(answer))
     print(*answer)
